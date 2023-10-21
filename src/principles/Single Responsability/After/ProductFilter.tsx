@@ -6,7 +6,7 @@ const ProductFilter = ({ onChange }: Props) => {
   return (
     <input
       onChange={(e) => onChange(e.target.value)}
-      placeholder="Filter Product"
+      placeholder="Filtrar produtos"
     />
   );
 };

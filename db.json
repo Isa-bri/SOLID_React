@@ -1,0 +1,9 @@
+{
+  "products": [
+    { "id": 1, "name": "Celular", "price": 1000.259 },
+    { "id": 2, "name": "Notebook", "price": 2000.259 },
+    { "id": 3, "name": "Tablet", "price": 3000.259 },
+    { "id": 4, "name": "CPU", "price": 4000.259 },
+    { "id": 5, "name": "Placa de Vídeo", "price": 5000.259 }
+  ]
+}

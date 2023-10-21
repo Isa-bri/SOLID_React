@@ -3,13 +3,15 @@ import { Product } from "../../../types";
 
 export const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
   const getProducts = async () => {
     setLoading(true);
-    const response = await fetch("/products");
+    const response = await fetch("http://localhost:3000/products");
     const data = await response.json();
     setProducts(data);
+    setFilteredProducts(data);
     setLoading(false);
   };
 
@@ -19,9 +21,9 @@ export const ProductList = () => {
 
   const filterProducts = (filter: string) => {
     const filteredProducts = products.filter((product) =>
-      product.name.includes(filter)
+      product.name.toLowerCase().includes(filter.toLowerCase())
     );
-    setProducts(filteredProducts);
+    setFilteredProducts(filteredProducts);
   };
 
   useEffect(() => {
@@ -36,9 +38,10 @@ export const ProductList = () => {
         <div>
           <input
             onChange={(e) => filterProducts(e.target.value)}
+            placeholder="Filtrar produtos"
           />
           <ul>
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <li key={product.id}>
                 <p>{product.name}</p>
                 <p>{formatPrice(product.price)}</p>
