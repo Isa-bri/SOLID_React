@@ -2,7 +2,7 @@ type Props = {
   onChange: (filter: string) => void;
 };
 
-const ProductFilter = ({ onChange }: Props) => {
+export const ProductFilter = ({ onChange }: Props) => {
   return (
     <input
       onChange={(e) => onChange(e.target.value)}
@@ -10,5 +10,3 @@ const ProductFilter = ({ onChange }: Props) => {
     />
   );
 };
-
-export default ProductFilter;

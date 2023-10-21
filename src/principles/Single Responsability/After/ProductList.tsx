@@ -5,7 +5,7 @@ type Props = {
   products: Product[];
 };
 
-const ProductList = ({ products }: Props) => {
+export const ProductList = ({ products }: Props) => {
   return (
     <ul>
       {products.map((product: Product) => (
@@ -17,5 +17,3 @@ const ProductList = ({ products }: Props) => {
     </ul>
   );
 };
-
-export default ProductList;
