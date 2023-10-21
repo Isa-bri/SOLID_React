@@ -3,7 +3,7 @@ import { Product } from "../../../types";
 
 export const useProducts = () => {
   const [products, setProducts] = useState<Product[]>([]);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [filter, setFilter] = useState("");
   const [loading, setLoading] = useState(true);
 
   const getProduct = async () => {
@@ -11,7 +11,6 @@ export const useProducts = () => {
     const response = await fetch("http://localhost:3000/products");
     const data = await response.json();
     setProducts(data);
-    setFilteredProducts(data);
     setLoading(false);
   };
 
@@ -20,14 +19,13 @@ export const useProducts = () => {
   }, []);
 
   const filterProducts = (filter: string) => {
-    const filteredProducts = products.filter((product) =>
-      product.name.toLowerCase().includes(filter.toLowerCase())
-    );
-    setFilteredProducts(filteredProducts);
+    setFilter(filter);
   };
 
   return {
-    products: filteredProducts,
+    products: products.filter((product) =>
+      product.name.toLowerCase().includes(filter.toLowerCase())
+    ),
     loading,
     filterProducts,
   };
