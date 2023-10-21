@@ -1,9 +1,9 @@
-import { ProductListContainer } from "./principles/Single Responsability/After/ProductListContainer";
-
+import { ClickMeWithBaseButton, ClickMeWithDangerButton } from "./principles/Liskov Substitution/After/ClickMe";
 function App() {
 
   return <>
-    <ProductListContainer />
+    <ClickMeWithBaseButton />
+    <ClickMeWithDangerButton />
   </>;
 }
 

@@ -8,7 +8,7 @@ export const useProducts = () => {
 
   const getProduct = async () => {
     setLoading(true);
-    const response = await fetch("http://localhost:3000/products");
+    const response = await fetch("/products");
     const data = await response.json();
     setProducts(data);
     setLoading(false);

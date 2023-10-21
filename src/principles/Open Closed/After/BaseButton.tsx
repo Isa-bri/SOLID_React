@@ -2,7 +2,7 @@ type Props = {
   onClick: () => void;
   children: React.ReactNode;
 };
-export const Button = ({ onClick, children }: Props) => {
+export const BaseButton = ({ onClick, children }: Props) => {
   return (
     <button
       style={{

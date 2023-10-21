@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { BaseButton } from "./BaseButton";
 
 type Props = {
   onClick: () => void;
@@ -7,9 +7,9 @@ type Props = {
 };
 export const ButtonWithIcon = ({ onClick, text, icon }: Props) => {
   return (
-    <Button onClick={onClick}>
+    <BaseButton onClick={onClick}>
       {icon}
       {text}
-    </Button>
+    </BaseButton>
   );
 };

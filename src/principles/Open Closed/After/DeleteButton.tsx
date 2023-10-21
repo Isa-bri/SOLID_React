@@ -1,8 +1,8 @@
-import { Button } from "./Button";
+import { BaseButton } from "./BaseButton";
 
 type Props = {
   onClick: () => void;
 };
 export const DeleteButton = ({ onClick }: Props) => {
-  return <Button onClick={onClick}>Deletar</Button>;
+  return <BaseButton onClick={onClick}>Deletar</BaseButton>;
 };
