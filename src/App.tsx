@@ -1,10 +1,5 @@
-import { ClickMeWithBaseButton, ClickMeWithDangerButton } from "./principles/Liskov Substitution/After/ClickMe";
 function App() {
-
-  return <>
-    <ClickMeWithBaseButton />
-    <ClickMeWithDangerButton />
-  </>;
+  return <></>;
 }
 
 export default App;
